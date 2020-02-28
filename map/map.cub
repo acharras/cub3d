@@ -1,9 +1,9 @@
-R 1520 1250
+R 720 480
 
 NO ./textures/north_wall.xpm
 SO ./textures/south_wall.xpm
 WE ./textures/west_wall.xpm
-E ./textures/east_wall.xpm
+EA ./textures/east_wall.xpm
 S ./textures/sprite.xpm
 
 
