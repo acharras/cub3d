@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 13:45:51 by acharras          #+#    #+#             */
-/*   Updated: 2020/02/28 18:31:14 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/02/28 19:28:19 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	ft_init_colors(t_cub3d *game, t_color color, char *line)
 	}
 }
 
-static void	ft_error_colors(t_cub3d *game, char *line, int j)
+static void	ft_error_colors(t_cub3d *game)
 {
 	if (game->tab_color[0] == NULL || game->tab_color[1] == NULL ||
 		game->tab_color[2] == NULL)
@@ -85,7 +85,7 @@ void		ft_colors(t_cub3d *game, char *line)
 		while (line[j] == ' ')
 			j++;
 		ft_check_path_colors(game, line, j);
-		ft_error_colors(game, line, j);
+		ft_error_colors(game);
 		ft_init_colors(game, color, line);
 		j = -1;
 		while (game->tab_color[++j])
