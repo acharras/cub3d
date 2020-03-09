@@ -1,6 +1,6 @@
 R 720 480
 
-NO ./textures/north_wall.xpm
+NO ./textures/sprite.xpm
 SO ./textures/south_wall.xpm
 WE ./textures/west_wall.xpm
 EA ./textures/east_wall.xpm

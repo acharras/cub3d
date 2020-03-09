@@ -6,11 +6,38 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 12:52:46 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/06 14:32:37 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/09 16:43:43 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_cub3d.h"
+
+void	ft_check_map_cub(t_cub3d *game, int error, int i, int j)
+{
+	int		k;
+	char	*check;
+
+	check = ft_strdup(".cub");
+	while (game->map_cub[++i] != '\0')
+		k = 0;
+	j = i - 4;
+	if (j - 1 < 0 || game->map_cub[j - 1] == '/')
+		error++;
+	while (j < i)
+	{
+		if (game->map_cub[j] == '\0' || check[k] != game->map_cub[j])
+			error++;
+		k++;
+		j++;
+	}
+	if (error != 0)
+	{
+		ft_memdel((void*)&check);
+		ft_putstr("Error\nName of the map isn't correct...\n");
+		ft_exit(game);
+	}
+	ft_memdel((void*)&check);
+}
 
 static void	ft_read_map(t_cub3d *game, int ret, char *line)
 {

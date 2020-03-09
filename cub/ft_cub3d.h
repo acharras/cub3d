@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 16:38:23 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/06 14:32:56 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/09 16:44:02 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,5 +225,6 @@ void				ft_path(t_cub3d *game, char *line);
 void				ft_alloc_sprite_order(t_cub3d *game);
 void				ft_check_space(t_cub3d *game, int i, int j);
 void				ft_check_number(t_cub3d *game, char *line, int j);
+void				ft_check_map_cub(t_cub3d *game, int error, int i, int j);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 13:00:49 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/06 14:33:00 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/09 16:43:36 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,13 @@ static int	ft_check_screenshot(t_cub3d *game, int ac, char **ag)
 
 static void	ft_check_args(t_cub3d *game, int ac, char **av)
 {
+	int		error;
+	int		i;
+	int		j;
+
+	i = -1;
+	j = 0;
+	error = 0;
 	if (ac > 3)
 	{
 		ft_putstr("Error\nToo much arguments\n");
@@ -80,6 +87,7 @@ static void	ft_check_args(t_cub3d *game, int ac, char **av)
 		exit(0);
 	}
 	game->map_cub = av[1];
+	ft_check_map_cub(game, error, i, j);
 	ft_check_screenshot(game, ac, av);
 }
 
