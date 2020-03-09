@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 17:26:45 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/09 12:59:27 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/09 13:17:30 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void		ft_check_map_error(t_cub3d *game)
 	{
 		printf("|%s|\n", game->map[i - 1]);
 		printf("|%d|\n", game->map_false);
-		ft_putstr("Error\nMap error : no '1' at the last line |");
+		ft_putstr("Error\nMap error : no '1' at the last line ||");
 		ft_putstr(" many | N | S | W | E | int the map...\n");
 		ft_exit(game);
 	}
