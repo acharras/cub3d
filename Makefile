@@ -6,7 +6,7 @@
 #    By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 11:37:56 by acharras          #+#    #+#              #
-#    Updated: 2020/02/28 18:29:11 by acharras         ###   ########lyon.fr    #
+#    Updated: 2020/03/06 15:50:35 by acharras         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC =	cub/ft_cub3d.c\
 		cub/ft_path.c\
 		cub/ft_colors.c\
 		cub/ft_move_see.c\
-		cub/ft_utils.c
+		cub/ft_utils.c\
+		cub/ft_utils_second.c
 
 OBJ = minilibx/libmlx.a libft/libft.a $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 12:52:46 by acharras          #+#    #+#             */
-/*   Updated: 2020/02/28 16:53:56 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/06 14:32:37 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,6 @@ void		ft_map(t_cub3d *game)
 		ft_exit(game);
 	ft_memdel((void*)&line);
 	close(game->fd);
-	if (ft_rm_space(game) == 0)
-		ft_exit(game);
-	if (ft_check_map_error(game) == 0)
-		ft_exit(game);
+	ft_check_map_error(game);
 	game->map[(int)game->posy][(int)game->posx] = '0';
 }

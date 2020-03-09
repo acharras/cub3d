@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:04:50 by acharras          #+#    #+#             */
-/*   Updated: 2020/02/26 15:11:55 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/02 15:05:39 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	ft_bitmap_image(t_cub3d *game, int fd, t_bpm2 bitinf)
 			color[1] = ble % 256;
 			ble /= 256;
 			color[2] = ble % 256;
-			write(fd, &color, sizeof(color));
+			write(fd, &color, 4);
 			x++;
 		}
 		y--;
@@ -55,7 +55,7 @@ void		ft_save_bitmap(char *filename, t_cub3d *game)
 	bitinf.width = game->width;
 	bitinf.height = game->height;
 	bitinf.planes = 1;
-	bitinf.bit_count = 24;
+	bitinf.bit_count = 32;
 	bitinf.compression = 0;
 	bitinf.image_size = game->width * game->height * 4 + 54;
 	bitinf.ppm_x = 2;

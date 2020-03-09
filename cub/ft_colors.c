@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 13:45:51 by acharras          #+#    #+#             */
-/*   Updated: 2020/02/28 19:28:19 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/09 12:27:03 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	ft_init_colors(t_cub3d *game, t_color color, char *line)
 static void	ft_error_colors(t_cub3d *game)
 {
 	if (game->tab_color[0] == NULL || game->tab_color[1] == NULL ||
-		game->tab_color[2] == NULL)
+		game->tab_color[2] == NULL || game->tab_color[3] != NULL)
 	{
 		ft_putstr("Error\nArgument | F | C | had a bad format...\n");
 		ft_exit(game);
@@ -56,9 +56,9 @@ static void	ft_check_path_colors(t_cub3d *game, char *line, int j)
 	}
 	if (!(game->tab_color = ft_split(&line[j], ',')))
 		ft_exit(game);
-	j = 1;
-	while (line[j] == ' ')
+	while (line[j] != '\0' && line[j] == ' ')
 		j++;
+	ft_check_number(game, line, j);
 	while (line[j] != '\0')
 	{
 		if (line[j] != '0' && line[j] != '1' && line[j] != '2' &&
@@ -73,6 +73,24 @@ static void	ft_check_path_colors(t_cub3d *game, char *line, int j)
 	}
 }
 
+static void	ft_check_comma(t_cub3d *game, char *line, int j)
+{
+	int comma;
+
+	comma = 0;
+	while (line[j] != '\0')
+	{
+		if (line[j] == ',')
+			comma++;
+		j++;
+	}
+	if (comma != 2)
+	{
+		ft_putstr("Error\nArgument | F | C | had a bad format...\n");
+		ft_exit(game);
+	}
+}
+
 void		ft_colors(t_cub3d *game, char *line)
 {
 	t_color	color;
@@ -82,6 +100,7 @@ void		ft_colors(t_cub3d *game, char *line)
 	color.argb[3] = 0;
 	if (line[0] == 'F' || line[0] == 'C')
 	{
+		ft_check_comma(game, line, j);
 		while (line[j] == ' ')
 			j++;
 		ft_check_path_colors(game, line, j);

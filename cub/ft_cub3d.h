@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 16:38:23 by acharras          #+#    #+#             */
-/*   Updated: 2020/02/28 16:13:34 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/06 14:32:56 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct		s_sprites
 
 typedef	struct		s_cub3d
 {
+	int				check_space_nbr;
 	int				tracked;
 	void			*mlx_ptr;
 	void			*win_ptr;
@@ -201,8 +202,8 @@ typedef union
 void				ft_map(t_cub3d *game);
 int					ft_check_map(t_cub3d *game, char *line);
 int					ft_check_full_arg(t_cub3d *game, char *line);
-int					ft_rm_space(t_cub3d *game);
-int					ft_check_map_error(t_cub3d *game);
+void				ft_rm_space(t_cub3d *game);
+void				ft_check_map_error(t_cub3d *game);
 int					key_input(int key, t_cub3d *game);
 void				ft_raycasting(t_cub3d *game);
 int					key_move(t_cub3d *game);
@@ -221,6 +222,8 @@ int					ft_close_prog(t_cub3d *game);
 void				ft_check_arg(t_cub3d *game, char *line);
 void				ft_colors(t_cub3d *game, char *line);
 void				ft_path(t_cub3d *game, char *line);
-int					ft_alloc_sprite_order(t_cub3d *game);
+void				ft_alloc_sprite_order(t_cub3d *game);
+void				ft_check_space(t_cub3d *game, int i, int j);
+void				ft_check_number(t_cub3d *game, char *line, int j);
 
 #endif

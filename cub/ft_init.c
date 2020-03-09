@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:30:15 by acharras          #+#    #+#             */
-/*   Updated: 2020/02/28 16:17:54 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/03 16:13:48 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static void	ft_init_config_game(t_cub3d *game)
 	game->check_map = 0;
 	game->map_false = 0;
 	game->tmp_map = NULL;
+	game->check_space_nbr = 0;
 }
 
 static void	ft_texture_init_next(t_cub3d *game)
