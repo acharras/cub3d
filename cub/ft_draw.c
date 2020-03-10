@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:52:32 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/09 17:14:24 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/10 16:36:39 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,29 @@ void		ft_draw_sprite(t_cub3d *game, int i)
 			}
 		}
 		game->drawstartx++;
+	}
+}
+
+void	ft_draw_lifebar(t_cub3d *game)
+{
+	int		x;
+	int		y;
+
+	x = game->width / 20;
+	while (x < game->width - game->width / 20)
+	{
+		y = game->height - game->height / 20;
+		while (y < game->height)
+		{
+			if ((game->life != 0 && x > game->width / 17 &&
+			x < game->width - game->width / 17) && (x >
+			(int)((double)(game->width - game->width / 20) * (1 -
+			(double)game->life / (double)game->maxlife))))
+				game->img_data[y * game->width + x] = 0xff0000;
+			else if (x < game->width - game->width / 20)
+				game->img_data[y * game->width + x] = 0x000000;
+			y++;
+		}
+		x++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 15:52:04 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/09 17:30:08 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/10 15:56:53 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ static void	ft_calculate_draw(t_cub3d *game)
 	game->drawend = game->lineheight / 2 + game->height / 2;
 	if (game->drawend >= game->height)
 		game->drawend = game->height - 1;
-	game->movespeed = 0.06;
-	game->rotspeed = 0.04;
 }
 
 static void	ft_check_collusion(t_cub3d *game)
@@ -49,10 +47,10 @@ static void	ft_check_collusion(t_cub3d *game)
 
 static void	ft_init_map(t_cub3d *game)
 {
-	game->mapx = (int)game->posx;
-	game->mapy = (int)game->posy;
 	game->deltadistx = fabs(1 / game->raydirx);
 	game->deltadisty = fabs(1 / game->raydiry);
+	game->mapx = (int)game->posx;
+	game->mapy = (int)game->posy;
 	if (game->raydirx < 0)
 	{
 		game->stepx = -1;
@@ -92,6 +90,7 @@ static void	ft_raycasting_next(t_cub3d *game)
 		ft_save_bitmap("bitmap.bmp", game);
 		ft_exit(game);
 	}
+	ft_draw_lifebar(game);
 	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->img_ptr, 0, 0);
 	mlx_hook(game->win_ptr, 2, 0, key_input, game);
 	mlx_hook(game->win_ptr, 3, 0, key_release, game);

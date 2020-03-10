@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 13:00:49 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/09 16:43:36 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/10 16:40:37 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ static void	ft_fov_init(t_cub3d *game)
 	ft_fov_init_next(game);
 	game->posx += 0.5;
 	game->posy += 0.5;
+	game->map_startx = game->posx;
+	game->map_starty = game->posy;
 }
 
 static int	ft_check_screenshot(t_cub3d *game, int ac, char **ag)

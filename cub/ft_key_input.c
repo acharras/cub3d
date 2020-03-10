@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 17:16:09 by acharras          #+#    #+#             */
-/*   Updated: 2020/02/28 14:15:03 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/10 15:21:06 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int			key_input(int key, t_cub3d *game)
 		game->press_s = 1;
 	if (game->key == 13)
 		game->press_w = 1;
+	if (game->key == 49)
+		game->press_shift = 1;
 	return (1);
 }
 
@@ -47,5 +49,7 @@ int			key_release(int key, t_cub3d *game)
 		game->press_s = 0;
 	if (game->key == 13)
 		game->press_w = 0;
+	if (game->key == 49)
+		game->press_shift = 0;
 	return (1);
 }

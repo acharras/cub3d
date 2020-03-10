@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 16:38:23 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/09 16:44:02 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/10 16:39:05 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,12 +128,15 @@ typedef	struct		s_cub3d
 	int				drawend;
 	double			movespeed;
 	double			rotspeed;
-	char			left_arrow;
-	char			right_arrow;
-	char			press_a;
-	char			press_d;
-	char			press_s;
-	char			press_w;
+	int				left_arrow;
+	int				right_arrow;
+	int				press_a;
+	int				press_d;
+	int				press_s;
+	int				press_w;
+	int				press_shift;
+	int				life;
+	int				maxlife;
 	int				x;
 	int				bits_per_pixel;
 	int				endian;
@@ -190,7 +193,9 @@ typedef	struct		s_cub3d
 	double			texpos;
 	double			step;
 	int				screenshot;
-
+	int				wait_life;
+	int				map_startx;
+	int				map_starty;
 }					t_cub3d;
 
 typedef union
@@ -226,5 +231,6 @@ void				ft_alloc_sprite_order(t_cub3d *game);
 void				ft_check_space(t_cub3d *game, int i, int j);
 void				ft_check_number(t_cub3d *game, char *line, int j);
 void				ft_check_map_cub(t_cub3d *game, int error, int i, int j);
+void				ft_draw_lifebar(t_cub3d *game);
 
 #endif
