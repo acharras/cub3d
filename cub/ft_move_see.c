@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 14:14:30 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/12 14:10:19 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 15:24:10 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,12 @@ int			key_move(t_cub3d *game)
 	game->rotspeed = 0.04;
 	if (++game->wait_life == 6)
 		game->wait_life = 0;
-	if (game->press_space == 0 && ++game->wait_sprint == 20)
+	if (game->press_shift == 0 && ++game->wait_sprint == 20)
 	{
 		game->wait_sprint = 0;
 		game->sprint += 10;
 	}
-	if (game->press_space == 1 && game->sprint > 0)
+	if (game->press_shift == 1 && game->sprint > 0)
 	{
 		if (game->sprint > 100)
 			game->sprint = 100;

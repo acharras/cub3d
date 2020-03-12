@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 16:38:23 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/12 13:37:42 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 15:24:50 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ typedef	struct		s_cub3d
 	int				press_d;
 	int				press_s;
 	int				press_w;
-	int				press_space;
+	int				press_shift;
 	int				press_h;
 	int				life;
 	int				maxlife;
