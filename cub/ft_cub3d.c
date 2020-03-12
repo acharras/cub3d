@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 13:00:49 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/10 16:40:37 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 13:10:08 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ int			main(int ac, char **av)
 		ft_exit(game);
 	game->tracked = 1;
 	ft_texture_init(game);
+	game->tracked = 8;
 	if (!(game->zbuffer = malloc(sizeof(double) * game->width)))
 		ft_exit(game);
 	ft_raycasting(game);

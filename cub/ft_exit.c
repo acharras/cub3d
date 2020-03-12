@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:41:57 by acharras          #+#    #+#             */
-/*   Updated: 2020/02/28 19:53:18 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 13:10:58 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ static void	ft_exit_next(t_cub3d *game)
 	ft_memdel((void *)&(game->south));
 	ft_memdel((void *)&(game->west));
 	ft_memdel((void *)&(game->sprite));
-	ft_memdel((void *)&(game->zbuffer));
+	if (game->tracked > 7)
+		ft_memdel((void *)&(game->zbuffer));
 	ft_memdel((void*)&game->tmp_map);
 	if (game->tab_color != NULL)
 		while (game->tab_color[++i])

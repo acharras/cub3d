@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 15:52:04 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/10 15:56:53 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 13:26:32 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,11 @@ static void	ft_raycasting_next(t_cub3d *game)
 		ft_save_bitmap("bitmap.bmp", game);
 		ft_exit(game);
 	}
-	ft_draw_lifebar(game);
+	if (game->press_h % 2 == 0)
+	{
+		ft_draw_lifebar(game);
+		ft_draw_sprintbar(game);
+	}
 	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->img_ptr, 0, 0);
 	mlx_hook(game->win_ptr, 2, 0, key_input, game);
 	mlx_hook(game->win_ptr, 3, 0, key_release, game);

@@ -6,13 +6,13 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 12:52:46 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/09 16:43:43 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 14:09:34 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_cub3d.h"
 
-void	ft_check_map_cub(t_cub3d *game, int error, int i, int j)
+void		ft_check_map_cub(t_cub3d *game, int error, int i, int j)
 {
 	int		k;
 	char	*check;

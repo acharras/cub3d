@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 14:14:30 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/10 16:42:05 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 14:10:19 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,31 +102,25 @@ int			key_move(t_cub3d *game)
 {
 	game->movespeed = 0.06;
 	game->rotspeed = 0.04;
-	if (game->press_shift == 1)
-		game->movespeed += 0.04;
-	game->wait_life++;
-	if (game->wait_life == 6)
+	if (++game->wait_life == 6)
 		game->wait_life = 0;
+	if (game->press_space == 0 && ++game->wait_sprint == 20)
+	{
+		game->wait_sprint = 0;
+		game->sprint += 10;
+	}
+	if (game->press_space == 1 && game->sprint > 0)
+	{
+		if (game->sprint > 100)
+			game->sprint = 100;
+		game->movespeed += 0.04;
+		game->sprint -= 1;
+	}
 	ft_move_f_b(game);
 	ft_move_r_l(game);
 	ft_see_r(game);
 	ft_see_l(game);
-	if (((game->map[(int)(game->posy + game->diry * game->movespeed)]
-		[(int)(game->posx + game->dirx * game->movespeed)] == '2') ||
-		(game->map[(int)(game->posy - game->diry * game->movespeed)]
-		[(int)(game->posx - game->dirx * game->movespeed)] == '2') ||
-		(game->map[(int)(game->posy - game->planey * game->movespeed)]
-		[(int)(game->posx - game->planex * game->movespeed)] == '2') ||
-		(game->map[(int)(game->posy + game->planey * game->movespeed)]
-		[(int)(game->posx + game->planex * game->movespeed)] == '2')) &&
-		game->wait_life == 5)
-		game->life -= 15;
-	if (game->life <= 0)
-	{
-		game->posy = game->map_starty;
-		game->posx = game->map_startx;
-		game->life = 100;
-	}
+	ft_check_life(game);
 	ft_raycasting(game);
 	return (1);
 }

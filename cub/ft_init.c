@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:30:15 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/10 16:05:04 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 13:37:58 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ static void	ft_init_config_map(t_cub3d *game)
 	game->press_w = 0;
 	game->verif_r = 0;
 	game->newline_map = 0;
+	game->press_h = 0;
+	game->sprint = 100;
+	game->maxsprint = 100;
+	game->wait_sprint = 0;
 }
 
 static void	ft_init_config_game(t_cub3d *game)

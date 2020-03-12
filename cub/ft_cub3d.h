@@ -6,7 +6,7 @@
 /*   By: acharras <acharras@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 16:38:23 by acharras          #+#    #+#             */
-/*   Updated: 2020/03/10 16:39:05 by acharras         ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 13:37:42 by acharras         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ typedef	struct		s_cub3d
 	int				verif_we;
 	char			*sprite;
 	int				verif_sp;
-	char			key;
+	int				key;
 	char			**tab_color;
 	int				color_floor;
 	int				color_ceiling;
@@ -134,7 +134,8 @@ typedef	struct		s_cub3d
 	int				press_d;
 	int				press_s;
 	int				press_w;
-	int				press_shift;
+	int				press_space;
+	int				press_h;
 	int				life;
 	int				maxlife;
 	int				x;
@@ -194,6 +195,9 @@ typedef	struct		s_cub3d
 	double			step;
 	int				screenshot;
 	int				wait_life;
+	int				sprint;
+	int				wait_sprint;
+	int				maxsprint;
 	int				map_startx;
 	int				map_starty;
 }					t_cub3d;
@@ -232,5 +236,7 @@ void				ft_check_space(t_cub3d *game, int i, int j);
 void				ft_check_number(t_cub3d *game, char *line, int j);
 void				ft_check_map_cub(t_cub3d *game, int error, int i, int j);
 void				ft_draw_lifebar(t_cub3d *game);
+void				ft_check_life(t_cub3d *game);
+void				ft_draw_sprintbar(t_cub3d *game);
 
 #endif
